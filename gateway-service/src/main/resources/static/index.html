@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway Service</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(140deg, #edf4ef, #d8e7dc);
+            color: #173125;
+        }
+
+        .panel {
+            width: min(92vw, 760px);
+            padding: 32px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 20px 40px rgba(23, 49, 37, 0.08);
+            border: 1px solid rgba(23, 49, 37, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            line-height: 1;
+        }
+
+        p {
+            line-height: 1.7;
+            color: rgba(23, 49, 37, 0.78);
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 8px;
+            background: rgba(23, 49, 37, 0.08);
+        }
+    </style>
+</head>
+<body>
+<section class="panel">
+    <h1>Gateway Service</h1>
+    <p>
+        This Spring Cloud Gateway is the backend API entry point for the Smart Energy demo.
+        The main React frontend now runs as a separate Node.js service.
+    </p>
+    <p>
+        Docker frontend URL: <code>http://localhost:3000</code>
+    </p>
+    <p>
+        Kubernetes frontend URL: <code>http://localhost:30082</code> when port-forwarded or exposed
+        through the frontend service.
+    </p>
+</section>
+</body>
+</html>

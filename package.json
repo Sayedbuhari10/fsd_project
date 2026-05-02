@@ -1,0 +1,21 @@
+{
+  "name": "smart-energy-microservices-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NPM helper scripts for the Spring Boot, React, Docker, and Kubernetes demo",
+  "scripts": {
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "docker:ps": "docker compose ps",
+    "frontend:install": "npm install --prefix frontend-service",
+    "frontend:dev": "npm run dev --prefix frontend-service",
+    "frontend:build": "npm run build --prefix frontend-service",
+    "k8s:apply": "kubectl apply -f k8s/",
+    "k8s:delete": "kubectl delete -f k8s/",
+    "k8s:pods": "kubectl get pods -n smart-energy-demo",
+    "k8s:services": "kubectl get svc -n smart-energy-demo",
+    "k8s:all": "kubectl get all -n smart-energy-demo",
+    "k8s:forward": "kubectl port-forward svc/frontend-service 30082:3000 -n smart-energy-demo"
+  }
+}

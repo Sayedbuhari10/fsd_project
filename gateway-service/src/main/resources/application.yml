@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+            allowedHeaders: "*"
+      routes:
+        - id: auth-service
+          uri: ${AUTH_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - RewritePath=/api/auth/?(?<segment>.*), /auth/$\{segment}
+        - id: dashboard-service
+          uri: ${DASHBOARD_SERVICE_URL:http://localhost:8082}
+          predicates:
+            - Path=/api/dashboard/**
+          filters:
+            - RewritePath=/api/dashboard/?(?<segment>.*), /dashboard/$\{segment}
+        - id: consumption-service
+          uri: ${CONSUMPTION_SERVICE_URL:http://localhost:8083}
+          predicates:
+            - Path=/api/consumption/**
+          filters:
+            - RewritePath=/api/consumption/?(?<segment>.*), /consumption/$\{segment}
+        - id: simulation-service
+          uri: ${SIMULATION_SERVICE_URL:http://localhost:8084}
+          predicates:
+            - Path=/api/simulation/**
+          filters:
+            - RewritePath=/api/simulation/?(?<segment>.*), /simulation/$\{segment}
+        - id: realtime-service
+          uri: ${REALTIME_SERVICE_URL:http://localhost:8085}
+          predicates:
+            - Path=/api/realtime/**
+          filters:
+            - RewritePath=/api/realtime/?(?<segment>.*), /realtime/$\{segment}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
