@@ -12,6 +12,10 @@ spring:
             allowedOrigins: "*"
             allowedMethods:
               - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
             allowedHeaders: "*"
       routes:
         - id: auth-service

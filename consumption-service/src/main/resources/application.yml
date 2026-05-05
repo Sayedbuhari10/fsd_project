@@ -5,9 +5,20 @@ spring:
   application:
     name: consumption-service
 
+  datasource:
+    url: jdbc:mysql://host.docker.internal:3306/smart_energy_demo
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
 management:
   endpoints:
     web:
       exposure:
         include: health,info
-
+ # (use 8083 for consumption-service)

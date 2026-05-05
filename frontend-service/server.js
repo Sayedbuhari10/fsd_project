@@ -3,7 +3,8 @@ const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 3000;
-const apiProxyTarget = process.env.API_PROXY_TARGET || "http://localhost:8080";
+const apiProxyTarget = process.env.API_PROXY_TARGET || "http://gateway-service:8080";
+
 const distPath = path.join(__dirname, "dist");
 
 app.use(express.json());

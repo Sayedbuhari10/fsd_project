@@ -17,5 +17,24 @@
     "k8s:services": "kubectl get svc -n smart-energy-demo",
     "k8s:all": "kubectl get all -n smart-energy-demo",
     "k8s:forward": "kubectl port-forward svc/frontend-service 30082:3000 -n smart-energy-demo"
-  }
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3",
+    "react-router-dom": "^7.14.2"
+  },
+  "main": "simple-auth-service.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sayedbuhari10/fsd_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sayedbuhari10/fsd_project/issues"
+  },
+  "homepage": "https://github.com/Sayedbuhari10/fsd_project#readme"
 }
